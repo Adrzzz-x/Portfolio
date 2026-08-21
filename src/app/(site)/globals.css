@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #faf6f0;
+  --color-panel: #f1e9de;
+  --color-border: #ddd1c2;
+  --color-border-light: #efe7dc;
+  --color-text: #201b16;
+  --color-text-muted: #5a5049;
+  --color-accent: #c0562b;
+  --color-accent-dark: #8e3d1d;
+  --color-green: #3f6455;
+
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jbmono);
+}
+
+@theme inline {
+  --color-ring: var(--color-accent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent-dark);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-accent);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.polaroid {
+  transform: rotate(var(--rotate, 0deg));
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.polaroid:hover {
+  transform: rotate(var(--rotate, 0deg)) translateY(-4px) scale(1.015);
+  cursor: zoom-in;
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
