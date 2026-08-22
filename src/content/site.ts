@@ -177,46 +177,6 @@ export const personalSection = {
   ],
 };
 
-export const swiftstatementCaseStudy = {
-  eyebrow: "Trade account reconciliation",
-  heading: "Month end, without the line-by-line",
-  intro:
-    "Every month your trade account sends a statement with hundreds of transactions. Someone has to open it, find the matching bill in your accounting system, check the amount, and tick it off. SwiftStatement does that matching for you, and shows you only the lines that need a decision.",
-  threeUp: [
-    {
-      label: "The problem",
-      body: "Statement lines and accounting bills live in two systems that never speak. Matching them is manual, slow, and easy to get wrong.",
-    },
-    {
-      label: "What we do",
-      body: "We pull both sides in automatically and match them line by line, so reconciled transactions clear themselves.",
-    },
-    {
-      label: "What you do",
-      body: "Review the exceptions — a new supplier, a missing bill, an amount that differs — and approve them in a few selects.",
-    },
-  ],
-  flow: {
-    heading: "How it fits together",
-    subheading: "We sit between your trade account and your accounting system, and keep the two in step.",
-    // Capricorn / Bapcor / IRT in the original design were real Australian trade-account buying
-    // groups — replaced with fictional names that keep the "buying group / franchise" framing so
-    // the concept still reads correctly without naming a real company.
-    tradeAccountHq: {
-      label: "Trade account HQ",
-      examples: "Tradeline Group, Forge Buying Co, Allied Trade Network — trade buying groups & franchises",
-      description: "Your monthly statement feed — every invoice, credit note and payment charged to the account.",
-    },
-    accounting: {
-      label: "Xero or MYOB",
-      description: "Accounts payable bills, suppliers and chart of accounts — the other half of the match.",
-    },
-    stats: { lines: 428, bills: 402, matched: 391, review: 37 },
-  },
-  demoDisclaimer:
-    "This is a working prototype with seeded sample data — nothing here posts to a real Xero account.",
-};
-
 export const closingCta = {
   heading: "I'm looking for a product or design role with more purpose. Let's talk.",
   emailHref: "mailto:adrian.mullee@gmail.com",
