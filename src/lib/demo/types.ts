@@ -1,4 +1,4 @@
-export type LineType = "Invoice" | "Credit Note" | "Payment";
+export type LineType = "Invoice" | "Payment" | "Credit Note";
 
 export type ReconciliationStatus =
   | "unlinked"
@@ -13,29 +13,20 @@ export type StatementLine = {
   id: string;
   type: LineType;
   poReference: string;
-  invoiceRef: string;
+  statementPeriod: string;
   supplierName: string;
-  invoiceDate: string; // ISO date
-  dueDate: string; // ISO date
+  invoiceRef: string;
+  invoiceDate: string; // "05 May 2026"
+  dueDate: string;
   originalAmount: number;
   balance: number;
-  statementMonth: string; // e.g. "2026-05"
+  statementMonth: string; // "2026-05"
+  syncedToXero: boolean;
+  paid: boolean;
   reconciliationStatus: ReconciliationStatus;
   xeroStatus: XeroStatus;
-  syncedToXero: boolean;
-  /** set once a line has been linked/matched to a Xero contact */
-  linkedContactId?: string;
-  /** set once a default product has been chosen for this line */
-  productCode?: string;
-  /** true only for the hand-authored duplicate-charge exception row */
-  isDuplicateOf?: string;
-};
-
-export type Supplier = {
-  id: string;
-  name: string;
-  preferred: boolean;
-  defaultProductCode?: string;
+  xeroInvoiceUrl?: string;
+  isNew?: boolean;
 };
 
 export type XeroContact = {
@@ -45,16 +36,23 @@ export type XeroContact = {
   abn: string;
 };
 
+export type SupplierMeta = {
+  refId: string;
+  abn: string;
+  phone: string;
+};
+
 export type Product = {
+  id: string;
   code: string;
   name: string;
   expenseCode: string;
   expenseName: string;
 };
 
-export type AccountMapping = {
-  code: string;
-  name: string;
+export type ExpenseAccount = {
+  expenseCode: string;
+  expenseName: string;
 };
 
 export type MatchCandidate = {
@@ -64,4 +62,27 @@ export type MatchCandidate = {
   total: number;
 };
 
-export type ToastMessage = { id: number; message: string };
+export type ReconStatusDoc = {
+  label: string;
+  icon: string;
+  description: string;
+};
+
+export type SortColumn = "supplier" | "date" | "amount" | "action";
+export type SortDir = "asc" | "desc";
+export type ReconFilter = "all" | "reconciled" | "unreconciled";
+export type TypeFilter = "all" | "debits" | "credits";
+export type HeaderView = "credit" | "spend";
+export type MatchMode = "match" | "postnew";
+export type Resolution = "writeoff" | "nothing";
+
+export type ColumnKey = "ref" | "po" | "date" | "period" | "due" | "amount" | "recon";
+
+export type VerifyRow = {
+  id: string;
+  ref: string;
+  supplier: string;
+  net: number;
+  product: string;
+  tax: number | string;
+};

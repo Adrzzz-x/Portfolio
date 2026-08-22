@@ -1,15 +1,5 @@
-import { ReconciliationWorkspace } from "@/components/demo/ReconciliationWorkspace";
-import { DemoDesktopGate } from "@/components/demo/DemoDesktopGate";
+import { Workspace } from "@/components/demo/workspace/Workspace";
 
 export default function DemoPage() {
-  return (
-    <>
-      <div className="hidden lg:block">
-        <ReconciliationWorkspace />
-      </div>
-      <div className="lg:hidden">
-        <DemoDesktopGate />
-      </div>
-    </>
-  );
+  return <Workspace />;
 }

@@ -217,12 +217,12 @@ export function IntroFlowDiagram() {
           </div>
           <div className="flex justify-center flex-wrap" style={{ gap: 7, marginTop: 13 }}>
             <span
-              className="ss-chip"
+              className="ss-intro-chip"
               style={{ background: "color-mix(in oklch, var(--chart-1) 14%, transparent)", color: "color-mix(in oklch, var(--chart-1) 68%, black)", height: 24, fontSize: 11 }}
             >
               {matched} matched
             </span>
-            <span className="ss-chip" style={{ background: "var(--muted)", color: "var(--muted-foreground)", height: 24, fontSize: 11 }}>
+            <span className="ss-intro-chip" style={{ background: "var(--muted)", color: "var(--muted-foreground)", height: 24, fontSize: 11 }}>
               {review} need review
             </span>
           </div>

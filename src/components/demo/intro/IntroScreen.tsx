@@ -20,7 +20,7 @@ export function IntroScreen() {
 
       <main className="flex-1 w-full" style={{ maxWidth: 1120, margin: "0 auto", padding: "52px 40px 72px" }}>
         <div style={{ maxWidth: 660 }}>
-          <span className="ss-chip" style={{ background: "color-mix(in oklch, var(--primary) 11%, transparent)", color: "var(--primary)" }}>
+          <span className="ss-intro-chip" style={{ background: "color-mix(in oklch, var(--primary) 11%, transparent)", color: "var(--primary)" }}>
             {intro.chip}
           </span>
           <h1 style={{ fontSize: 40, lineHeight: 1.1, fontWeight: 700, letterSpacing: "-0.028em", margin: "18px 0 16px" }}>

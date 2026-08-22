@@ -1,9 +1,11 @@
 @import "tailwindcss";
+@import "./workspace.css";
+@import "./settings.css";
 
-/* Scoped under [data-app="demo"] (set on this layout's <body>) so these tokens never leak
-   into — or collide with — the (site) route group's Tailwind theme. The demo's own
-   components read these CSS variables directly rather than generating Tailwind utilities
-   for them, which keeps the two design systems fully isolated per a single Tailwind config. */
+/* Design tokens for the SwiftStatement demo, ported verbatim from the canvas source.
+   Scoped under [data-app="demo"] (set on this layout's <body>) so they can never collide
+   with the (site) route group's Tailwind theme. Style demo components with the classes
+   defined here and in workspace.css — not with Tailwind colour utilities. */
 [data-app="demo"] {
   --background: oklch(0.9842 0.0034 247.86);
   --foreground: oklch(0.3729 0.0306 259.73);
@@ -20,24 +22,41 @@
   --ring: oklch(0.5854 0.2041 277.12);
   --chart-1: oklch(0.634 0.1096 163.74);
   --chart-4: oklch(0.6746 0.1356 75.66);
+
   --font-demo-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-demo-mono: var(--font-geist-mono), ui-monospace, monospace;
+
   --radius: 0.5rem;
   --radius-md: 0.375rem;
   --radius-sm: 0.25rem;
   --radius-full: 9999px;
+
   --shadow-sm: 0px 1px 3px hsl(0 0% 0% / 0.08), 0px 1px 2px -1px hsl(0 0% 0% / 0.08);
   --shadow-lg: 0px 8px 16px -2px hsl(0 0% 0% / 0.12), 0px 4px 8px -4px hsl(0 0% 0% / 0.08);
   --shadow-xl: 0px 16px 32px -4px hsl(0 0% 0% / 0.14);
   --shadow-2xl: 0px 24px 48px -8px hsl(0 0% 0% / 0.22);
 
+  --text-display: 600 2.25rem/1.15 var(--font-demo-sans);
+  --text-h2: 600 1.25rem/1.3 var(--font-demo-sans);
+  --text-h3: 600 1.125rem/1.35 var(--font-demo-sans);
+  --text-body: 400 0.875rem/1.5 var(--font-demo-sans);
+  --text-small: 400 0.8125rem/1.5 var(--font-demo-sans);
+  --text-label: 500 0.875rem/1.4 var(--font-demo-sans);
+  --text-caption: 400 0.75rem/1.4 var(--font-demo-sans);
+  --text-overline: 600 0.6875rem/1.4 var(--font-demo-sans);
+
   font-family: var(--font-demo-sans);
-  background: radial-gradient(
+  background:
+    radial-gradient(
       1100px 560px at 88% -10%,
       color-mix(in oklch, var(--secondary) 32%, transparent),
       transparent 60%
     ),
-    radial-gradient(820px 460px at -5% 108%, color-mix(in oklch, var(--secondary) 24%, transparent), transparent 58%),
+    radial-gradient(
+      820px 460px at -5% 108%,
+      color-mix(in oklch, var(--secondary) 24%, transparent),
+      transparent 58%
+    ),
     var(--background);
   background-attachment: fixed;
   color: var(--foreground);
@@ -46,219 +65,21 @@
   min-height: 100vh;
 }
 
-[data-app="demo"] button {
+[data-app="demo"] button,
+[data-app="demo"] input,
+[data-app="demo"] select,
+[data-app="demo"] textarea {
   font-family: inherit;
-  cursor: pointer;
 }
-[data-app="demo"] a {
-  color: var(--primary);
-  text-decoration: none;
-}
-[data-app="demo"] a:hover {
-  color: color-mix(in oklch, var(--primary) 80%, black);
-}
-[data-app="demo"] *:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-}
-
-.ss-hd {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  border-bottom: 1px solid var(--border);
-  background: color-mix(in oklch, var(--background) 92%, transparent);
-  backdrop-filter: blur(8px);
-}
-.ss-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  height: 34px;
-  padding: 0 13px 0 9px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--muted-foreground);
-  font-size: 12.5px;
-  font-weight: 600;
-}
-.ss-back:hover {
-  border-color: color-mix(in oklch, var(--primary) 45%, var(--border));
-  color: var(--primary);
-}
-.ss-page {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 32px 20px 80px;
-}
-.ss-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow-sm);
-}
-.ss-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 38px;
-  padding: 0 16px;
-  border-radius: var(--radius-md);
-  border: 1px solid transparent;
-  font-size: 13.5px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: 0.15s;
-}
-.ss-btn--sm {
-  height: 32px;
-  padding: 0 12px;
-  font-size: 12.5px;
-}
-.ss-btn--primary {
-  background: var(--primary);
-  color: var(--primary-foreground);
-}
-.ss-btn--primary:hover {
-  opacity: 0.9;
-}
-.ss-btn--primary:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-.ss-btn--outline {
-  background: var(--card);
-  border-color: var(--border);
-  color: var(--foreground);
-}
-.ss-btn--outline:hover {
-  background: var(--accent);
-}
-.ss-btn--ghost {
-  background: transparent;
-  color: var(--muted-foreground);
-  border-color: var(--border);
-}
-.ss-btn--ghost:hover {
-  background: var(--accent);
-  color: var(--foreground);
-}
-.ss-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  border-radius: var(--radius-full);
-  padding: 3px 10px;
-  font-size: 11px;
-  font-weight: 500;
-  white-space: nowrap;
-  border: 1px solid transparent;
-}
-.ss-badge--muted {
-  background: var(--muted);
-  color: var(--muted-foreground);
-  border-color: var(--border);
-}
-.ss-badge--ok {
-  background: color-mix(in oklch, var(--chart-1) 14%, transparent);
-  color: color-mix(in oklch, var(--chart-1) 68%, black);
-  border-color: color-mix(in oklch, var(--chart-1) 30%, transparent);
-}
-.ss-badge--exc {
-  background: color-mix(in oklch, var(--chart-4) 14%, transparent);
-  color: color-mix(in oklch, var(--chart-4) 58%, black);
-  border-color: color-mix(in oklch, var(--chart-4) 32%, transparent);
-}
-.ss-input,
-.ss-select {
-  height: 38px;
-  width: 100%;
-  padding: 0 12px;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-md);
-  font-size: 13px;
-  color: var(--foreground);
-  background: var(--muted);
-  outline: none;
-}
-.ss-input:focus,
-.ss-select:focus {
-  border-color: var(--primary);
-  background: var(--card);
-}
-.ss-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.ss-table th {
-  text-align: left;
-  padding: 10px 12px;
-  background: var(--muted);
-  font-size: 10.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted-foreground);
-  border-bottom: 1px solid var(--border);
-}
-.ss-table td {
-  padding: 11px 12px;
-  border-bottom: 1px solid color-mix(in oklch, var(--border) 55%, transparent);
-  font-size: 13px;
-  color: var(--foreground);
-  vertical-align: middle;
-}
-.ss-table tbody tr:hover td {
-  background: color-mix(in oklch, var(--muted) 50%, transparent);
-}
-.ss-toast {
-  position: fixed;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--foreground);
-  color: var(--primary-foreground);
-  padding: 12px 18px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-xl);
-  z-index: 200;
-  font-size: 13.5px;
-}
-.ss-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(2px);
-}
-/* Radix renders Dialog.Overlay and Dialog.Content as siblings inside the Portal, not
-   parent/child — centering has to live on Content itself, not on the overlay. */
-.ss-modal-content {
-  position: fixed;
-  inset: 0;
-  z-index: 101;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  outline: none;
-}
-.ss-modal {
-  background: var(--card);
-  border-radius: 16px;
-  box-shadow: var(--shadow-2xl);
-  width: 100%;
-  max-width: 640px;
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+[data-app="demo"] button { cursor: pointer; }
+[data-app="demo"] a { color: var(--primary); text-decoration: none; }
+[data-app="demo"] a:hover { color: color-mix(in oklch, var(--primary) 80%, black); }
+[data-app="demo"] *:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+[data-app="demo"] ::-webkit-scrollbar { width: 8px; height: 8px; }
+[data-app="demo"] ::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--muted-foreground) 25%, transparent);
+  border-radius: 9px;
+  border: 2px solid var(--background);
 }
 
 /* ── Intro screen (ported from the Intro.dc.html canvas file) ── */
@@ -318,7 +139,7 @@
   text-transform: uppercase;
   color: var(--muted-foreground);
 }
-.ss-chip {
+.ss-intro-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
