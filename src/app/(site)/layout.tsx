@@ -42,6 +42,11 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: "Product Owner & AI Native Designer, Perth WA.",
+  },
 };
 
 const personJsonLd = {
