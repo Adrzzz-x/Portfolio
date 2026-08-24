@@ -1,5 +1,6 @@
 import { hero } from "@/content/site";
 import { Polaroid } from "./Polaroid";
+import { TrackedLink } from "./TrackedLink";
 
 export function Hero() {
   return (
@@ -27,14 +28,16 @@ export function Hero() {
           >
             {hero.primaryCta.label}
           </a>
-          <a
+          <TrackedLink
+            event="CV downloaded"
+            eventData={{ location: "hero" }}
             href={hero.secondaryCta.href}
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-[15px] text-accent-dark border border-border px-6 py-4 rounded-sm"
           >
             {hero.secondaryCta.label}
-          </a>
+          </TrackedLink>
         </div>
       </div>
       <Polaroid

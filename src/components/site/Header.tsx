@@ -1,4 +1,5 @@
 import { navItems, cvHref } from "@/content/site";
+import { TrackedLink } from "./TrackedLink";
 
 export function Header() {
   return (
@@ -14,14 +15,16 @@ export function Header() {
             {item.label}
           </a>
         ))}
-        <a
+        <TrackedLink
+          event="CV downloaded"
+          eventData={{ location: "header" }}
           href={cvHref}
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-xs uppercase tracking-[0.12em] text-accent-dark border border-border rounded-sm px-3.5 py-2.5"
         >
           CV ↓
-        </a>
+        </TrackedLink>
       </nav>
     </header>
   );

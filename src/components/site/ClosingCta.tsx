@@ -1,4 +1,5 @@
 import { closingCta } from "@/content/site";
+import { TrackedLink } from "./TrackedLink";
 
 export function ClosingCta() {
   return (
@@ -16,9 +17,15 @@ export function ClosingCta() {
         <a href={closingCta.linkedinHref} target="_blank" rel="noopener noreferrer">
           {closingCta.linkedinLabel}
         </a>
-        <a href={closingCta.cvHref} target="_blank" rel="noopener noreferrer">
+        <TrackedLink
+          event="CV downloaded"
+          eventData={{ location: "closing" }}
+          href={closingCta.cvHref}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {closingCta.cvLabel}
-        </a>
+        </TrackedLink>
         <span>{closingCta.location}</span>
       </div>
     </div>

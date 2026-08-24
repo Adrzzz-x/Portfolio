@@ -2,13 +2,18 @@
 
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import { track } from "@vercel/analytics";
 import { intro } from "@/content/intro";
 
 export function FullScreenDemoTrigger() {
   const [resetCount, setResetCount] = useState(0);
 
   return (
-    <Dialog.Root>
+    <Dialog.Root
+      onOpenChange={(open) => {
+        if (open) track("Demo opened");
+      }}
+    >
       <Dialog.Trigger asChild>
         <button type="button" className="ss-btn-primary">
           {intro.tryDemoLabel}
