@@ -1,14 +1,9 @@
 import type { StaticImageData } from "next/image";
 import heroPortrait from "@/assets/images/hero-portrait.jpg";
 import swiftstatementScreenshot from "@/assets/images/swiftstatement-screenshot.png";
+import chessBoard from "@/assets/images/chess-board.jpg";
 import galleryFremantle from "@/assets/images/gallery-fremantle.jpeg";
 import galleryPortraitCasual from "@/assets/images/gallery-portrait-casual.jpeg";
-
-// gallery-shed.jpg was re-fetched from the
-// Claude Design canvas truncated (a 256KB response cap on the design-import tool) and fail to
-// decode — Next's build-time image processing hard-crashes on a static import of a corrupt file,
-// so these three are intentionally NOT imported. They render as labeled placeholders below until
-// re-exported cleanly from the canvas and dropped into src/assets/images/.
 
 export type NavItem = { label: string; href: string };
 
@@ -163,9 +158,9 @@ export const personalSection = {
     },
     {
       type: "photo",
-      alt: "The aircraft build in progress in Adrian's shed",
+      src: chessBoard,
+      alt: "A chess game mid-play on a wooden table, afternoon light through open doors",
       rotationDeg: 1.6,
-      pendingLabel: "Photo pending re-export",
     },
     {
       type: "video",
