@@ -158,7 +158,7 @@ export const personalSection = {
     {
       type: "photo",
       src: galleryPortraitCasual,
-      alt: "Adrian Mullee outdoors on a weekend in Fremantle",
+      alt: "Hand on the throttle in the cockpit of a Kitfox light aircraft, coastline below",
       rotationDeg: -2,
     },
     {
@@ -171,13 +171,13 @@ export const personalSection = {
       type: "video",
       posterSrc: "/video/aircraft-build-poster.jpg",
       videoSrc: "/video/aircraft-build.mp4",
-      alt: "Video clip of the aircraft build in the shed",
+      alt: "Cockpit view on final approach to a coastal airstrip",
       rotationDeg: 1.2,
     },
     {
       type: "photo",
       src: galleryFremantle,
-      alt: "Fremantle waterfront on a weekend walk",
+      alt: "Kitfox cockpit instrument panel in flight, turquoise water and reef below",
       rotationDeg: -1.4,
     },
   ],
