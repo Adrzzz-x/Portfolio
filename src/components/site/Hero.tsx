@@ -23,7 +23,7 @@ export function Hero() {
         <div className="flex flex-wrap gap-3.5 mt-11">
           <a
             href={hero.primaryCta.href}
-            className="font-medium text-[15px] text-bg bg-accent px-6 py-4 rounded-sm"
+            className="font-medium text-[15px] text-white bg-accent px-6 py-4 rounded-sm"
           >
             {hero.primaryCta.label}
           </a>

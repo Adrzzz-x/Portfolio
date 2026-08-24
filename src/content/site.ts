@@ -24,6 +24,8 @@ export type CaseStudy = {
   ctaHref: string;
   screenshot?: { src?: StaticImageData; alt: string; unoptimized?: boolean; pendingLabel?: string };
   placeholderLabel?: string;
+  /** Veils the row and disables its CTA until the write-up exists. */
+  comingSoon?: boolean;
 };
 
 export type Principle = { title: string; description: string };
@@ -62,7 +64,7 @@ export const hero = {
   eyebrow: "Product Owner & AI Native Designer · Perth, WA",
   heading: "Adrian Mullee",
   intro:
-    "I'm a Product Owner in regulated fintech. I lead teams to ship things that work — and lately I design and prototype them myself. Here's one you can actually use.",
+    "I design simple solutions and lead teams to deliver them, solving real problems for customers. I'm a servant leader who takes personal responsibility for helping my team reach their full potential.",
   primaryCta: { label: "See SwiftStatement →", href: "/swiftstatement" },
   secondaryCta: { label: "Download CV", href: cvHref },
   portrait: {
@@ -91,7 +93,7 @@ export const caseStudies: CaseStudy[] = [
     badge: "Live demo",
     title: "SwiftStatement",
     description:
-      "Daily invoice reconciliation tool for businesses buying on a trade account. Replaces a month-end matching job that used to take a full day. In production with 100 users.",
+      "SwiftStatement is a daily invoice reconciliation tool for businesses buying on a trade account. Replaces a month-end matching job that can take hours. In production with 100 users.",
     tags: ["Fintech", "Xero & MYOB plugin"],
     ctaLabel: "Try the live demo →",
     ctaHref: "/swiftstatement",
@@ -111,6 +113,7 @@ export const caseStudies: CaseStudy[] = [
     ctaLabel: "Read the case study →",
     ctaHref: "#",
     placeholderLabel: "Before / after lodgement diagram",
+    comingSoon: true,
   },
 ];
 
@@ -176,6 +179,8 @@ export const personalSection = {
     },
   ],
 };
+
+export const comingSoonLabel = "Coming soon";
 
 export const closingCta = {
   heading: "I'm looking for a product or design role with more purpose. Let's talk.",

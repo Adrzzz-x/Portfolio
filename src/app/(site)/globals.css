@@ -26,12 +26,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: var(--color-accent-dark);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--color-accent);
+/* These must sit in @layer base. Unlayered rules beat Tailwind's @layer utilities
+   regardless of specificity, so an unlayered `a { color }` silently cancels every
+   text-* utility applied to a link. */
+@layer base {
+  a {
+    color: var(--color-accent-dark);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-accent);
+  }
 }
 
 *:focus-visible {
