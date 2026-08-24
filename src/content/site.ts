@@ -181,7 +181,7 @@ export const personalSection = {
 export const comingSoonLabel = "Coming soon";
 
 export const closingCta = {
-  heading: "I'm always happy to chat about product, design or consulting opportunities! I love a challenge and learning about a new industry.",
+  heading: "I'm always happy to chat about product, design or consulting opportunities!",
   emailHref: "mailto:adrian.mullee@gmail.com",
   emailLabel: "adrian.mullee@gmail.com",
   linkedinHref: "https://www.linkedin.com/in/adrian-mullee-4a389442/",
