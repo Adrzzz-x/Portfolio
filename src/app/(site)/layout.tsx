@@ -52,7 +52,7 @@ const personJsonLd = {
   email: CONTACT_EMAIL,
   jobTitle: "Product Owner & AI Native Designer",
   address: { "@type": "PostalAddress", addressLocality: "Perth", addressRegion: "WA", addressCountry: "AU" },
-  sameAs: [],
+  sameAs: ["https://www.linkedin.com/in/adrian-mullee-4a389442/"],
 };
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {

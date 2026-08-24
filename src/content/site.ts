@@ -1,9 +1,10 @@
 import type { StaticImageData } from "next/image";
 import heroPortrait from "@/assets/images/hero-portrait.jpg";
+import swiftstatementScreenshot from "@/assets/images/swiftstatement-screenshot.png";
 import galleryFremantle from "@/assets/images/gallery-fremantle.jpeg";
 import galleryPortraitCasual from "@/assets/images/gallery-portrait-casual.jpeg";
 
-// gallery-shed.jpg and swiftstatement-screenshot.png were re-fetched from the
+// gallery-shed.jpg was re-fetched from the
 // Claude Design canvas truncated (a 256KB response cap on the design-import tool) and fail to
 // decode — Next's build-time image processing hard-crashes on a static import of a corrupt file,
 // so these three are intentionally NOT imported. They render as labeled placeholders below until
@@ -100,8 +101,8 @@ export const caseStudies: CaseStudy[] = [
     ctaLabel: "Try the live demo →",
     ctaHref: "/swiftstatement",
     screenshot: {
+      src: swiftstatementScreenshot,
       alt: "SwiftStatement app screenshot showing a trade account statement with unmatched invoices",
-      pendingLabel: "Screenshot pending re-export",
     },
   },
   {
@@ -188,7 +189,7 @@ export const closingCta = {
   heading: "I'm looking for a product or design role with more purpose. Let's talk.",
   emailHref: "mailto:adrian.mullee@gmail.com",
   emailLabel: "adrian.mullee@gmail.com",
-  linkedinHref: "#", // placeholder — no LinkedIn URL provided yet
+  linkedinHref: "https://www.linkedin.com/in/adrian-mullee-4a389442/",
   linkedinLabel: "LinkedIn ↗",
   cvLabel: "Download CV ↓",
   cvHref,
