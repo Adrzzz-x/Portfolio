@@ -36,8 +36,8 @@ export function Hero() {
         </div>
       </div>
       <Polaroid
+        src={hero.portrait.src}
         alt={hero.portrait.alt}
-        pendingLabel={hero.portrait.pendingLabel}
         rotationDeg={-1.8}
         height={400}
         tape={{ rotateDeg: 2.5, top: "-13px", left: "50%", transform: "translateX(-50%)" }}

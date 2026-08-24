@@ -1,8 +1,9 @@
 import type { StaticImageData } from "next/image";
+import heroPortrait from "@/assets/images/hero-portrait.jpg";
 import galleryFremantle from "@/assets/images/gallery-fremantle.jpeg";
 import galleryPortraitCasual from "@/assets/images/gallery-portrait-casual.jpeg";
 
-// hero-portrait.jpg, gallery-shed.jpg and swiftstatement-screenshot.png were re-fetched from the
+// gallery-shed.jpg and swiftstatement-screenshot.png were re-fetched from the
 // Claude Design canvas truncated (a 256KB response cap on the design-import tool) and fail to
 // decode — Next's build-time image processing hard-crashes on a static import of a corrupt file,
 // so these three are intentionally NOT imported. They render as labeled placeholders below until
@@ -58,7 +59,8 @@ export const navItems: NavItem[] = [
   { label: "Flying", href: "#the-rest-of-me" },
 ];
 
-export const cvHref = "#"; // placeholder — no CV file uploaded yet
+// Served from public/cv.pdf. This path goes into job applications — do not change it.
+export const cvHref = "/cv.pdf";
 
 export const hero = {
   eyebrow: "Product Owner & AI Native Designer · Perth, WA",
@@ -68,8 +70,8 @@ export const hero = {
   primaryCta: { label: "See SwiftStatement →", href: "/swiftstatement" },
   secondaryCta: { label: "Download CV", href: cvHref },
   portrait: {
+    src: heroPortrait,
     alt: "Adrian Mullee, product owner and designer, portrait photo",
-    pendingLabel: "Portrait pending re-export",
   },
 };
 
@@ -104,7 +106,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "afg-platform",
-    period: "2021–2024 · Product Owner",
+    period: "2021–2025 · Product Owner",
     role: "Product Owner",
     title: "AFG Platform",
     description:
