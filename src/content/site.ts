@@ -143,7 +143,7 @@ export const howIWork = {
 
 export const personalSection = {
   eyebrow: "The rest of me",
-  heading: "Checklists, a shed, and Fremantle",
+  heading: "Off the clock...",
   paragraphs: [
     "When I was fifteen, my dad bought a wrecked Kitfox Model 3 which was an awesome surprise! We started rebuilding it together, but realised pretty quickly that it was going to take much longer than expected.",
     "I came home from overseas in 2020, finished my Level 1 aircraft maintenance certificate, and spent most of that year in the hangar getting it done. By early 2021 it was ready to fly, and my dad did the honours of the first flight.",
