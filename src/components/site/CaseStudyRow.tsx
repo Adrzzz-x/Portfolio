@@ -50,7 +50,10 @@ export function CaseStudyRow({
             {study.ctaLabel}
           </span>
         ) : (
-          <a href={study.ctaHref} className="inline-block mt-8 font-medium text-[15px] text-accent-dark">
+          <a
+            href={study.ctaHref}
+            className="inline-block mt-8 font-medium text-[15px] text-white bg-accent px-6 py-4 rounded-sm hover:bg-accent-dark transition-colors"
+          >
             {study.ctaLabel}
           </a>
         )}
