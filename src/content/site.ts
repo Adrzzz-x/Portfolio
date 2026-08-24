@@ -3,7 +3,7 @@ import heroPortrait from "@/assets/images/hero-portrait.jpg";
 import swiftstatementScreenshot from "@/assets/images/swiftstatement-screenshot.png";
 import chessBoard from "@/assets/images/chess-board.jpg";
 import galleryFremantle from "@/assets/images/gallery-fremantle.jpeg";
-import galleryPortraitCasual from "@/assets/images/gallery-portrait-casual.jpeg";
+import plane from "@/assets/images/plane.jpg";
 
 export type NavItem = { label: string; href: string };
 
@@ -152,8 +152,8 @@ export const personalSection = {
   collage: <CollageItem[]>[
     {
       type: "photo",
-      src: galleryPortraitCasual,
-      alt: "Hand on the throttle in the cockpit of a Kitfox light aircraft, coastline below",
+      src: plane,
+      alt: "The finished Kitfox Model 3, registration 19-1546, on a grass airstrip",
       rotationDeg: -2,
     },
     {
