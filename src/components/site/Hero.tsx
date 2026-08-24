@@ -29,6 +29,8 @@ export function Hero() {
           </a>
           <a
             href={hero.secondaryCta.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-medium text-[15px] text-accent-dark border border-border px-6 py-4 rounded-sm"
           >
             {hero.secondaryCta.label}

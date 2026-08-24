@@ -16,6 +16,8 @@ export function Header() {
         ))}
         <a
           href={cvHref}
+          target="_blank"
+          rel="noopener noreferrer"
           className="font-mono text-xs uppercase tracking-[0.12em] text-accent-dark border border-border rounded-sm px-3.5 py-2.5"
         >
           CV ↓

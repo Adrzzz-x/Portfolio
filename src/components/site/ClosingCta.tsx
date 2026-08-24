@@ -13,8 +13,12 @@ export function ClosingCta() {
         {closingCta.emailLabel}
       </a>
       <div className="flex flex-wrap gap-6 sm:gap-7 mt-6 text-[15px] text-text-muted">
-        <a href={closingCta.linkedinHref}>{closingCta.linkedinLabel}</a>
-        <a href={closingCta.cvHref}>{closingCta.cvLabel}</a>
+        <a href={closingCta.linkedinHref} target="_blank" rel="noopener noreferrer">
+          {closingCta.linkedinLabel}
+        </a>
+        <a href={closingCta.cvHref} target="_blank" rel="noopener noreferrer">
+          {closingCta.cvLabel}
+        </a>
         <span>{closingCta.location}</span>
       </div>
     </div>
