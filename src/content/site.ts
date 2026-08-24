@@ -145,9 +145,9 @@ export const personalSection = {
   eyebrow: "The rest of me",
   heading: "Checklists, a shed, and Fremantle",
   paragraphs: [
-    "I'm building an aircraft in a shed in Perth. It's a slow project that rewards checklists, tolerances and finishing a job properly before starting the next one — the same instinct I bring to regulated software, where the cost of getting it wrong isn't evenly distributed.",
-    "Weekends are usually Fremantle, without much of a plan. For the last few years I've also worked on reconciliation and DEI inside the organisations I've been part of — mostly the unglamorous end of it: getting commitments written down, funded, and reported on.",
-    "I'm looking for product and UX work in Perth or remote, in industry or consulting. What I want next is work where the outcome still matters to someone after the quarter closes.",
+    "When I was fifteen, my dad bought a wrecked Kitfox Model 3 which was an awesome surprise! We started rebuilding it together, but realised pretty quickly that it was going to take much longer than expected.",
+    "I came home from overseas in 2020, finished my Level 1 aircraft maintenance certificate, and spent most of that year in the hangar getting it done. By early 2021 it was ready to fly, and my dad did the honours of the first flight.",
+    "I still get down to the hangar whenever I can. When I'm not flying, you'll find me in the garden at home in Freo, at the pub on a Sunday with a pint of Guinness, or playing chess with my housemates.",
   ],
   collage: <CollageItem[]>[
     {
